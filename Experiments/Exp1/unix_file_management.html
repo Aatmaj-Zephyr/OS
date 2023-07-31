@@ -135,3 +135,38 @@ Adding group `try&apos; (GID 1001) ...
 Done.
 <font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop/folder</b></font>$ sudo chgrp try exp1
 </pre>
+<pre><font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ who
+kjsce    :0           2023-07-31 16:04 (:0)
+<font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ whoami
+kjsce
+</pre>
+<pre><font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ finger
+
+Command &apos;finger&apos; not found, but can be installed with:
+
+sudo apt install finger
+
+<font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ sudo apt install finger
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libfwupdplugin1 libxmlb1 ubuntu-advantage-desktop-daemon
+Use &apos;sudo apt autoremove&apos; to remove them.
+The following NEW packages will be installed:
+  finger
+0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+Need to get 16.9 kB of archives.
+After this operation, 51.2 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu focal/universe amd64 finger amd64 0.17-17 [16.9 kB]
+Fetched 16.9 kB in 5s (3,562 B/s)<font color="#C4A000"> </font>
+Selecting previously unselected package finger.
+(Reading database ... 202378 files and directories currently installed.)
+Preparing to unpack .../finger_0.17-17_amd64.deb ...
+Unpacking finger (0.17-17) ...
+Setting up finger (0.17-17) ...
+Processing triggers for man-db (2.9.1-1) ...
+<font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ finger
+Login     Name       Tty      Idle  Login Time   Office     Office Phone
+kjsce     KJSCE     *:0             Jul 31 16:04 (:0)
+</pre>
