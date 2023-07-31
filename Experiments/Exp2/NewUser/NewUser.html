@@ -120,3 +120,24 @@ fwupd-refresh:x:127:134:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
 aatmaj:x:1001:1002::/home/aatmaj:/bin/sh
 abc:x:1002:1003:abc,1,1,:/home/abc:/bin/bash
 </pre>
+<pre><font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ su abc
+Password: 
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ who
+kjsce    :0           2023-07-31 16:04 (:0)
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ su kjsce
+Password: 
+<font color="#4E9A06"><b>kjsce@ubuntu</b></font>:<font color="#3465A4"><b>~/Desktop</b></font>$ sudo su abc
+[sudo] password for kjsce: 
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ ls
+a  exp1  <font color="#4E9A06"><b>exp2.sh</b></font>  F2.txt  <font color="#3465A4"><b>folder</b></font>  <font color="#3465A4"><b>Smit-2</b></font>  <font color="#3465A4"><b>Smit_OS</b></font>  <font color="#3465A4"><b>Smit_OS_Lab</b></font>
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ who
+kjsce    :0           2023-07-31 16:04 (:0)
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ sudo ls
+[sudo] password for abc: 
+abc is not in the sudoers file.  This incident will be reported.
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce/Desktop</b></font>$ cd ..
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home/kjsce</b></font>$ cd ..
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home</b></font>$ ls
+<font color="#3465A4"><b>abc</b></font>  <font color="#3465A4"><b>kjsce</b></font>
+<font color="#4E9A06"><b>abc@ubuntu</b></font>:<font color="#3465A4"><b>/home</b></font>$ cd abc
+</pre>
