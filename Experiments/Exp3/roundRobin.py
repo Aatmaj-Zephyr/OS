@@ -1,4 +1,4 @@
-'''
+
 k=int(input("Please enter number of processes "))
 
 arrivalTime=[int(input("Please enter arrival time for process "+str(i)+" ")) for i in range(k)]
@@ -10,16 +10,12 @@ timeQuantaDecided =int(input("Please enter the time quanta "))
 
 '''
 #Test case 
-k=4
-arrivalTime=[0,1,3,2]
-processes=[0,1,2,3]
-timeQuantaDecided =2
 
 k=5
 arrivalTime=[0,2,4,6,7]
 reqTime=[2,3,4,5,6]
 timeQuantaDecided =2
-
+'''
 processes=range(k)
 timeQuanta = timeQuantaDecided
 reqTimeCopy=[i for i in reqTime]
