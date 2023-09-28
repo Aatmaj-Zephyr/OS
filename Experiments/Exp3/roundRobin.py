@@ -49,8 +49,12 @@ for i in range(100):
     reqTime[currentProcess]-=1
     timeQuanta-=1 
     
+    
 print("Total time spent waiting for processes is given by", waiting) 
-print("Total turnaround time for processes is given by", [int(waiting[i])+int(reqTimeCopy[i]) for i in processes])      
+print("Average waiting Time",sum(waiting)/len(waiting))
+turnaroundTimeArray=[int(waiting[i])+int(reqTimeCopy[i]) for i in processes]
+print("Total turnaround time for processes is given by",turnaroundTimeArray )
+print("Average turnaround Time",sum(turnaroundTimeArray)/len(turnaroundTimeArray))
 print("\n")    
 print("\n_________________________________________________________________________________________________________________________________________________________________")
 
