@@ -14,7 +14,8 @@ def produce(n,mutex,pointer):
                           print(i,end=",")
                     print()
                 mutex.value = 0 #flop
-
+            else:
+                print("Producer cannot produce at full array")
                 
             time.sleep(0.2)
 
@@ -31,6 +32,8 @@ def consume(n,mutex,pointer):
                 pointer.value-=1
 
             mutex.value = 0 #flip
+        else:
+            print("Consumer cannot consume from empty array")
         time.sleep(0.5)
 
                 
@@ -49,8 +52,9 @@ if __name__ == '__main__': # dont remove this line code wont run in windows.
     process2 = multiprocessing.Process(target=consume,args=(n,mutex,pointer,))
 
     # Start both processes
-    process1.start()
     process2.start()
+    process1.start()
+    
 
     
     
