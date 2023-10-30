@@ -54,7 +54,8 @@ if __name__ == '__main__': # dont remove this line code wont run in windows.
     # Start both processes
     process2.start()
     process1.start()
-    
+    process2.join()
+    process1.join()
 
     
     

@@ -1,19 +1,16 @@
 C = [
-   [3,2,2],
-   [6,1,3],
-   [3,1,4],
-   [4,2,2]
+   [25],
+   [20],
+   [45],
+   [26]
 ]
 
 A = [
-   [1,0,0],
-   [6,1,2],
-   [2,1,1],
-   [0,0,2]
+   [45],[40],[15],[35]
 ]
-R = [3,3,2] #total
-V = [0,1,1] #avaiable
-process = range(5)
+R = [150] #total
+V = [50] #avaiable
+process = range(4)
 import numpy as np
 A = np.array(A)
 C = np.array(C)
@@ -27,7 +24,7 @@ while(len(D)!=0):
     terminate = True
     for i in D:
         index +=1
-        print(V)
+        #print(V)
         if((i <= V).all()):
             print("process ", process[index], " can continue")
             V = V + A[index]

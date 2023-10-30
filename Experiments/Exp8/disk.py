@@ -1,7 +1,7 @@
 num = 10
 
 #num = int(input("please enter number of values "))
-tasks_input = [100,55,58,39,18,90,160,150,38,184]
+tasks_input = [98, 183, 37, 122, 14, 124, 65, 67.]
 
 #tasks_input = [int(input("please enter sectors ")) for i in range(num)]
 

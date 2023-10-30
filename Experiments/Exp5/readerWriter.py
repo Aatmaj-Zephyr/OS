@@ -52,5 +52,10 @@ if __name__ == '__main__': # dont remove this line code wont run in windows.
     process2.start()
     process3.start()
 
+    process1.join()
+    process2.join()
+    process3.join()
+
+
     
     

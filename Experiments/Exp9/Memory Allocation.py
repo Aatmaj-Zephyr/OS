@@ -9,7 +9,7 @@ def nextFit(memory, process_size,pointer):
             continue
         if(sum(memory[ptr : ptr + process_size]) == 0): # is all 0
             #allocate
-            print(ptr)
+            #print(ptr)
             for i in range(ptr , ptr + process_size):
                 memory[i] = 1
                 
@@ -19,7 +19,7 @@ def nextFit(memory, process_size,pointer):
     return -1
 
 def firstFit(memory, process_size,pointer):
-    nextFit(memory, process_size,0)
+    return nextFit(memory, process_size,0)
     
 
 def bestFit(memory, process_size,pointer):
@@ -48,13 +48,14 @@ def bestFit(memory, process_size,pointer):
         memarray.append(mem)
         memscore.append(score)
         ptr+=1
-    print(memscore)
-    print(memarray)
-    print(memscore.index(min(memscore)))
+    #print(memscore)
+    #print(memarray)
+    #print(memscore.index(min(memscore)))
     memory = memarray[memscore.index(min(memscore))]
-    print(memory)
+    #print(memory)
     return memarray[memscore.index(min(memscore))]
         
+"""
 #randomly fill array
 nextFit(memory,2,pointer)
 nextFit(memory,3,pointer+3)
@@ -74,3 +75,19 @@ print(memory)
 #[1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 memory = [0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 bestFit(memory,2,pointer)
+"""
+
+memory = [0,1,1,0,0,1,0,0,1,1,0,1]
+#pointer here        |
+print("Next Fit",nextFit(memory.copy(),process_size=2,pointer=4))
+print("First Fit",firstFit(memory.copy(),process_size=2,pointer=4))
+print("Best Fit",bestFit(memory.copy(),process_size=1,pointer=4))
+
+"""
+Expected output
+
+([0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1], 8)
+([0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1], 5)
+[1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1]
+"""
+
