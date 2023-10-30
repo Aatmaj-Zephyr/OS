@@ -1,6 +1,8 @@
 memory = [0 for i in range(32)]
 pointer = 0
 def nextFit(memory, process_size,pointer):
+    
+        
     for ptr in range(pointer, pointer + len(memory)):
         ptr = ptr % len(memory)
         if(ptr + process_size > len(memory)):
@@ -25,20 +27,33 @@ def bestFit(memory, process_size,pointer):
     memscore = []
     ptr = 0
     while(True):
-        mem,ptr = nextFit(memory.copy(), process_size,ptr)
+        mem,p = nextFit(memory.copy(), process_size,ptr)
         score = 0
+       
+            
         if(mem in memarray):
             break # repeat reached
-        for i in range(ptr,len(mem)):
+
+        for i in range(p,len(mem)):
             if(mem[i]==0):
                 score +=1
+                
             else:
                 break
+        try:# for overflow
+            if(memory[p - process_size -1] ==0): #if the position does not align at the start of memory chunk
+                score = 10000
+        except:
+            pass
         memarray.append(mem)
         memscore.append(score)
-        print(memscore)
-        memory = memarray[memscore.index(min(memscore))]
-        return memarray[memscore.index(min(memscore))]
+        ptr+=1
+    print(memscore)
+    print(memarray)
+    print(memscore.index(min(memscore)))
+    memory = memarray[memscore.index(min(memscore))]
+    print(memory)
+    return memarray[memscore.index(min(memscore))]
         
 #randomly fill array
 nextFit(memory,2,pointer)
@@ -59,4 +74,3 @@ print(memory)
 #[1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 memory = [0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 bestFit(memory,2,pointer)
-print(memory)
